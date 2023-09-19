@@ -12,39 +12,55 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to
-				build a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like
-				Tailwind, React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main class="index-main">
+			<h1>STOP KOLCOM</h1>
+			<p>Pierwszy krok w naszej walce o zakaz kolców zrobiony. Przedstawiam Wam logo tej kampanii. Podziękujcie gorąco Aneta Sobaniec - która jest autorką loga i zrobiła je pro bono!
+			Kolejne kroki w kampanii:
+			Strona internetowa
+			Profile w mediach społecznościowych
+			Propagowanie idei
+			Osoby chętne do pomocy proszę o kontakt. Każdy z nas ma swoje obowiązki i jest już w jakimś stopniu zaangażowany w pomoc gołębiom, więc proszę aby zgłaszały się tylko osoby, które dysponują chwilą wolnego czasu. Potrzebna będzie pomocy przy:
+			opracowaniu tekstów (myślę, że tu ja ogarnę większość)
+			stworzeniu strony internetowej
+			grafik na stronę
+			bieżącej obsługi mediów społecznościowych (potrzebna osoba/osoby zwłaszcza do Instagrama i TikToka bo ja tych nie ogarniam)
+			Każdy kto ma jakiś pomysł na działanie, akcje itd, też może się zgłaszać. W najbliższym czasie założę profil na fb i grupę dla osób które będą stale działać przy kampanii.</p>
+			<p>Pierwszy krok w naszej walce o zakaz kolców zrobiony. Przedstawiam Wam logo tej kampanii. Podziękujcie gorąco Aneta Sobaniec - która jest autorką loga i zrobiła je pro bono!
+				Kolejne kroki w kampanii:
+				Strona internetowa
+				Profile w mediach społecznościowych
+				Propagowanie idei
+				Osoby chętne do pomocy proszę o kontakt. Każdy z nas ma swoje obowiązki i jest już w jakimś stopniu zaangażowany w pomoc gołębiom, więc proszę aby zgłaszały się tylko osoby, które dysponują chwilą wolnego czasu. Potrzebna będzie pomocy przy:
+				opracowaniu tekstów (myślę, że tu ja ogarnę większość)
+				stworzeniu strony internetowej
+				grafik na stronę
+				bieżącej obsługi mediów społecznościowych (potrzebna osoba/osoby zwłaszcza do Instagrama i TikToka bo ja tych nie ogarniam)
+				Każdy kto ma jakiś pomysł na działanie, akcje itd, też może się zgłaszać. W najbliższym czasie założę profil na fb i grupę dla osób które będą stale działać przy kampanii.</p>
 		</main>
 		<Footer />
 	</body>
 </html>
+<style>
+	.index-main {
+		color: white;
+		background-image: url("public/background-bw.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin: 0;
+		padding: 80px 15rem;
+		/* font-size: 1.5em; */
+	}
+	.index-main p {
+		font-size: 1.4em;
+	}
+	@media  (max-width: 1200px) {
+		.index-main {
+			padding: 40px 2%;
+		}
+	}
+	/* @media  (max-width: 720px) {
+		.index-main {
+			padding: 40px 5%;
+		}
+	} */
+</style>

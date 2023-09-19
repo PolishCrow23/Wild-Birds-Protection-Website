@@ -5,11 +5,15 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/"><img class="logo" src="public/logo-białe.png"></a>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/">STRONA GŁÓWNA</HeaderLink>
+			<HeaderLink href="blog">AKTUALNOŚCI</HeaderLink>
+			<HeaderLink href="/blog">KAMPANIA</HeaderLink>
+			<!-- <HeaderLink href="/about">PARTNERZY</HeaderLink> -->
+			<HeaderLink href="/about">WSPARCIE</HeaderLink>
+			<HeaderLink href="/about">PODZIĘKOWANIE</HeaderLink>
+			<HeaderLink href="/about">KONTAKT</HeaderLink>
 		</div>
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
@@ -44,40 +48,39 @@ import { SITE_TITLE } from '../consts';
 </header>
 <style>
 	header {
-		margin: 0;
+		margin: 0 auto;
 		padding: 0 1em;
-		background: white;
+		background: linear-gradient(to right, rgb(2, 13, 34), rgb(32, 54, 95), rgb(9, 1, 29));
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
 	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
+	.logo {
+		max-width: 100px;
+		display: flex;
+	}
 	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+		padding: 0.5em;
+		font-size: 1.8rem;
+		color: var(--white);
 		text-decoration: none;
 	}
-	nav a.active {
+	nav a:hover {
+		color: var(--accent);
+	}
+	nav .internal-links a.active {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		border-bottom-color: var(--black);
+		border-bottom: 3px solid;
 	}
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
-	@media (max-width: 720px) {
+	@media  (max-width: 720px) {
 		.social-links {
 			display: none;
 		}
