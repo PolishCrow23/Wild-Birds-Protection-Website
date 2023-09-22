@@ -12,7 +12,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main class="index-main">
+		<div class="hero">
 			<h1>STOP KOLCOM</h1>
 			<p>Pierwszy krok w naszej walce o zakaz kolców zrobiony. Przedstawiam Wam logo tej kampanii. Podziękujcie gorąco Aneta Sobaniec - która jest autorką loga i zrobiła je pro bono!
 			Kolejne kroki w kampanii:
@@ -36,25 +36,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				grafik na stronę
 				bieżącej obsługi mediów społecznościowych (potrzebna osoba/osoby zwłaszcza do Instagrama i TikToka bo ja tych nie ogarniam)
 				Każdy kto ma jakiś pomysł na działanie, akcje itd, też może się zgłaszać. W najbliższym czasie założę profil na fb i grupę dla osób które będą stale działać przy kampanii.</p>
-		</main>
+			</div>
 		<Footer />
 	</body>
 </html>
 <style>
-	.index-main {
+	.hero {
 		color: white;
 		background-image: url("/background-bw.png");
 		background-repeat: no-repeat;
 		background-size: cover;
 		margin: 0;
 		padding: 80px 15rem;
-		/* font-size: 1.5em; */
-	}
-	.index-main p {
-		font-size: 1.4em;
 	}
 	@media  (max-width: 1200px) {
-		.index-main {
+		.hero {
 			padding: 40px 2%;
 		}
 	}
