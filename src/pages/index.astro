@@ -3,6 +3,14 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
 <!doctype html>
@@ -13,41 +21,68 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header title={SITE_TITLE} />
 		<div class="hero">
-			<h1>STOP KOLCOM</h1>
-			<p>Pierwszy krok w naszej walce o zakaz kolców zrobiony. Przedstawiam Wam logo tej kampanii. Podziękujcie gorąco Aneta Sobaniec - która jest autorką loga i zrobiła je pro bono!
-			Kolejne kroki w kampanii:
-			Strona internetowa
-			Profile w mediach społecznościowych
-			Propagowanie idei
-			Osoby chętne do pomocy proszę o kontakt. Każdy z nas ma swoje obowiązki i jest już w jakimś stopniu zaangażowany w pomoc gołębiom, więc proszę aby zgłaszały się tylko osoby, które dysponują chwilą wolnego czasu. Potrzebna będzie pomocy przy:
-			opracowaniu tekstów (myślę, że tu ja ogarnę większość)
-			stworzeniu strony internetowej
-			grafik na stronę
-			bieżącej obsługi mediów społecznościowych (potrzebna osoba/osoby zwłaszcza do Instagrama i TikToka bo ja tych nie ogarniam)
-			Każdy kto ma jakiś pomysł na działanie, akcje itd, też może się zgłaszać. W najbliższym czasie założę profil na fb i grupę dla osób które będą stale działać przy kampanii.</p>
-			<p>Pierwszy krok w naszej walce o zakaz kolców zrobiony. Przedstawiam Wam logo tej kampanii. Podziękujcie gorąco Aneta Sobaniec - która jest autorką loga i zrobiła je pro bono!
-				Kolejne kroki w kampanii:
-				Strona internetowa
-				Profile w mediach społecznościowych
-				Propagowanie idei
-				Osoby chętne do pomocy proszę o kontakt. Każdy z nas ma swoje obowiązki i jest już w jakimś stopniu zaangażowany w pomoc gołębiom, więc proszę aby zgłaszały się tylko osoby, które dysponują chwilą wolnego czasu. Potrzebna będzie pomocy przy:
-				opracowaniu tekstów (myślę, że tu ja ogarnę większość)
-				stworzeniu strony internetowej
-				grafik na stronę
-				bieżącej obsługi mediów społecznościowych (potrzebna osoba/osoby zwłaszcza do Instagrama i TikToka bo ja tych nie ogarniam)
-				Każdy kto ma jakiś pomysł na działanie, akcje itd, też może się zgłaszać. W najbliższym czasie założę profil na fb i grupę dla osób które będą stale działać przy kampanii.</p>
+			<h1 class="hero-heading">Zakaz Kolców:</br>Wspólnie Chronimy</br>Ptaki w Mieście</h1>
+			<a class="button" href="#">Dowiedz się więcej</a>
+		</div>
+		<main>
+			<div>
+				<h2>Nasza misja to ochrona dzikich ptaków i zachowanie środowiska naturalnego. Dowiedz się więcej o tym problemie i dlaczego warto zastanowić się nad zakazem stosowania kolców.</h2>
+				<a class="button" href="#">Dowiedz się więcej</a>
 			</div>
+
+			<div>
+				<h2>Aktualności</h2>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.slug}/`}>
+									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<h4 class="title">{post.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div class="flex-container info-box">
+				<h3>Jak możesz pomóc</h3>
+				<div class="flex-item">
+					<img src="public/number.png">
+					<h5>Podpisz Petycję</h5>
+					<p>Dołącz do naszej petycji, aby poprzeć zakaz instalowania kolców przeciw ptakom na budynkach.</p>
+				</div>
+				<div class="flex-item">
+					<img src="public/number-1.png">
+					<h5>Wspieraj Naszą Kampanię</h5>
+					<p>Wsparcie finansowe jest niezwykle ważne dla naszej działalności. Każda kwota pomaga w promowaniu świadomości.</p>
+				</div>
+				<div class="flex-item">
+					<img src="public/number-2.png">
+					<h5>Dziel Się Informacją</h5>
+					<p>Dziel się naszymi materiałami, artykułami oraz informacjami na temat zakazu kolców w swoim środowisku.</p>
+				</div>
+			</div>
+		</main>
 		<Footer />
 	</body>
 </html>
 <style>
 	.hero {
 		color: white;
-		background-image: url("/background-bw.png");
+		background-image: url("public/hero-img.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		margin: 0;
-		padding: 80px 15rem;
+		padding-inline: 150px 0;
+		padding-block: 80px 130px;
+	}
+	.info-box {
+		background-color: var(--light-gray);
 	}
 	@media  (max-width: 1200px) {
 		.hero {

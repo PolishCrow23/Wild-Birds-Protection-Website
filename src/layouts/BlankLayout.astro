@@ -4,7 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
+// type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description } = Astro.props;
 ---
@@ -14,11 +14,12 @@ const { title, description } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-                width: 960px;
+                width: 720px;
 				/* width: calc(100% - 2em); */
 				max-width: 100%;
 				margin: 0 auto;
-				padding-bottom: 30px;
+				padding-bottom: 50px;
+                padding-top: 20px;
 			}
 			.prose {
 				width: 720px;
@@ -51,7 +52,7 @@ const { title, description } = Astro.props;
 				</div>
 					<slot />
 				</div>
-			</section>
+			</article>
 		</main>
 		<Footer />
 	</body>
