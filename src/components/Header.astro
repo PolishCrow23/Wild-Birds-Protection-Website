@@ -7,8 +7,7 @@ import { SITE_TITLE } from '../consts';
 	<nav>
 		<a href="/"><img class="logo" src="/logo.png"></a>
 		<div class="internal-links">
-			<HeaderLink href="/">STRONA GŁÓWNA</HeaderLink>
-			<HeaderLink href="blog">AKTUALNOŚCI</HeaderLink>
+			<HeaderLink href="/blog">AKTUALNOŚCI</HeaderLink>
 			<HeaderLink href="/kampania">KAMPANIA</HeaderLink>
 			<!-- <HeaderLink href="/about">PARTNERZY</HeaderLink> -->
 			<HeaderLink href="/wsparcie">WSPARCIE</HeaderLink>
@@ -34,9 +33,10 @@ import { SITE_TITLE } from '../consts';
 		display: flex;
 	}
 	.internal-links {
-		display: flex;
-		gap: 40px;
 		font-size: 1.6rem;
+	}
+	.internal-links {
+		display: none;
 	}
 	.internal-links a {
 		font-family: 'Inter';
@@ -46,13 +46,10 @@ import { SITE_TITLE } from '../consts';
 		color: #141414;
 		text-decoration: none;
 	}
-	/* .social-links,
-	.social-links a {
+	@media  (min-width: 768px) {
+		.internal-links {
 		display: flex;
-	}
-	@media  (max-width: 720px) {
-		.social-links {
-			display: none;
+		gap: 40px;
 		}
-	} */
+	}
 </style>

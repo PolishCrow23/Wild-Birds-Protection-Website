@@ -20,36 +20,45 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<div class="hero">
+		<section class="hero">
 			<h1 class="hero-heading">Zakaz Kolców:</br>Wspólnie Chronimy</br>Ptaki w Mieście</h1>
-			<a class="button" href="#">Dowiedz się więcej</a>
-		</div>
-		<main>
-			<div>
-				<h2>Nasza misja to ochrona dzikich ptaków i zachowanie środowiska naturalnego. Dowiedz się więcej o tym problemie i dlaczego warto zastanowić się nad zakazem stosowania kolców.</h2>
+			<div class="button-container">
 				<a class="button" href="#">Dowiedz się więcej</a>
 			</div>
+		</section>
+		<section class="main-info">
+			<h2>Nasza misja to ochrona dzikich ptaków i zachowanie środowiska naturalnego. Dowiedz się więcej o tym problemie i dlaczego warto zastanowić się nad zakazem stosowania kolców.</h2>
+			<div class="button-container">
+				<a class="button light-button" href="#">Dowiedz się więcej</a>
+			</div>
+		</section>
+		<hr/>
 
-			<div>
-				<h2>Aktualności</h2>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
+		<section class="news">
+			<h2>Aktualności</h2>
+			<ul>
+				{
+					posts.map((post) => (
+						<li>
+							<a class="post-container" href={`/blog/${post.slug}/`}>
+								<div>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
+								</div>
+								<div class="post-info">
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
-								</a>
-							</li>
+									<h4 class="title">{post.data.title}</h4>
+									<h4 class="decription">{post.data.description}</h4>
+								</div>
+							</a>
+						</li>
 						))
 					}
 				</ul>
-			</div>
+			</section>
 
-			<div class="flex-container info-box">
+			<section class="flex-container info-box">
 				<h3>Jak możesz pomóc</h3>
 				<div class="flex-item">
 					<img src="public/number.png">
@@ -66,8 +75,7 @@ const posts = (await getCollection('blog')).sort(
 					<h5>Dziel Się Informacją</h5>
 					<p>Dziel się naszymi materiałami, artykułami oraz informacjami na temat zakazu kolców w swoim środowisku.</p>
 				</div>
-			</div>
-		</main>
+			</section>
 		<Footer />
 	</body>
 </html>
@@ -78,20 +86,76 @@ const posts = (await getCollection('blog')).sort(
 		background-repeat: no-repeat;
 		background-size: cover;
 		margin: 0;
-		padding-inline: 150px 0;
-		padding-block: 80px 130px;
+		padding-inline: 2%;
+		padding-block: calc(4vh + 1rem);
+	}
+	section {
+		padding-block: calc(2vh + 1rem);
+		padding-inline: 2%;
 	}
 	.info-box {
 		background-color: var(--light-gray);
+		
 	}
-	@media  (max-width: 1200px) {
+	h1 {
+		text-align: center;
+		font-size: calc(2.5vw + 2rem);
+	}
+	h2 {
+		text-align: center;
+		font-size: 1.5rem;
+	}
+	.button-container {
+		text-align: center;
+		}
+	.button {
+		display: inline-block;
+	}
+	.news *{
+		text-align: left;
+	}
+	.news img {
+		max-width: 400px;
+	}
+
+	.post-container {
+		display: flex;
+		gap: 40px;
+		margin-bottom: 20px;
+	}
+	.post-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	@media  (min-width: 600px) {
 		.hero {
-			padding: 40px 2%;
+			padding-inline: 10% 0;
+			background-image: url("/hero-img.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding-block: 80px 130px;
+		}
+		.news, .info-box {
+		padding-block: calc(2vh + 2rem);
+		max-width: 900px;
+		margin: 0 auto;
+		}
+		.main-info {
+			padding-block: calc(6vh + 2rem);
+		}
+		h1 {
+			font-size: 6.4rem;
+			text-align: left;
+		}
+		h2 {
+			font-size: 2.8rem;
+		}
+		.hero .button-container {
+			text-align: left;
+		}
+		.main-info .button {
+			margin-top: 20px;
 		}
 	}
-	/* @media  (max-width: 720px) {
-		.index-main {
-			padding: 40px 5%;
-		}
-	} */
 </style>
