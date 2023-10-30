@@ -4,6 +4,7 @@
 	--white: #ffffff;
 	--light-gray: #D6D6D6;
 	--gray: #737373;
+	--medium-gray: #676666;
 	--darker-gray: #525252;
 	--dark-gray: #34302F;
 	--black: #141414;
@@ -26,7 +27,6 @@ h6 {
 	text-align: center;
 	margin-block: 0.6rem 1rem;
 	font-weight: 500;
-	color: var(--black)
 }
 a {
 	text-decoration: none;

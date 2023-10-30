@@ -7,7 +7,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, author, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
@@ -33,7 +33,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
-				padding: 1em;
+				padding: 2.5em 1em 1em 1em;
 				color: rgb(var(--gray-dark));
 			}
 			.title {
@@ -42,16 +42,20 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				text-align: center;
 				line-height: 1;
 			}
-			h1 !important {
-				margin: 0 0 0.5em 0;
+			h1 {
+				margin: 0.4em 0 0.5em 0;
 				font-size: 3.6rem;
 			}
-			.date {
+			.date, .author {
+				font-size: 1.2rem;
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
 			}
-			.last-updated-on {
+			.last-updated-on, .date, .author {
 				font-style: italic;
+			}
+			.date-author-container > div {
+				margin-left: auto;
 			}
 		</style>
 	</head>
@@ -65,15 +69,22 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+						<div class="date-author-container">
+							<div class="date">
+								Opublikowano:
+								<FormattedDate date={pubDate} />
+								{
+									updatedDate && (
+										<div class="last-updated-on">
+											Last updated on <FormattedDate date={updatedDate} />
+										</div>
+									)
+								}
+							</div>
+							<div class="author">
+								Autor:
+								{author}
+							</div>
 						</div>
 						<h1>{title}</h1>
 						<hr />
@@ -82,9 +93,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 			</article>
 		</main>
-		<div>
-			Last updated on <FormattedDate date={updatedDate} />
-		</div>
 		<Footer />
 	</body>
 </html>
