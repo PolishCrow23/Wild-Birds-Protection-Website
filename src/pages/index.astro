@@ -91,40 +91,36 @@ const posts = (await getCollection('blog')).sort(
 </html>
 <style>
 	.hero {
-		color: white;
 		background-image: url("/hero-img.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
-		margin: 0;
 		padding-inline: 2%;
-		padding-block: calc(4vh + 1rem);
+		padding-block: calc(3vw + 2rem);
 	}
 	.main-info, .news {
 		margin-block: calc(3vw + 2rem);
 	}
-
-	.info-box, .news {
-		padding-inline: 2%;
+	.news {
+		margin-block: calc(3vw + 3rem) calc(5vw + 3rem);
+	}
+	.main-info, .info-box, .news {
+		margin-inline: 2%;
 	}
 	h1 {
 		text-align: center;
 		font-size: calc(2.5vw + 2rem);
-		color: var(--black);
 	}
 	h2 {
 		text-align: center;
-		font-size: 1.6rem;
-		
+		font-size: 1.8rem;
+		line-height: 1.5em;
 	}
 	h3 {
-		font-size: 2.4rem;
+		font-size: 2rem;
 	}
-	h4 {
+	h4,h5 {
 		font-size: 1.8rem;
 	}
-	h5 {
-			font-size: 1.8rem;
-		}
 	.button-container {
 		text-align: center;
 	}
@@ -134,21 +130,29 @@ const posts = (await getCollection('blog')).sort(
 
 	/* NEWS */
 	.news *{
-		text-align: left;
+		text-align: center;
 		list-style: none;
 	}
+	.news img {
+		margin-inline: auto;
+	}
 	.news-flex {
+		gap: 15px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
 		margin-bottom: 30px;
+	}
+	.news-flex .button {
+		margin: 0;
 	}
 	.news ul {
 		padding: 0;
 	}
 	.post-image {
 		flex-shrink: 0;
-		display: flex;
-		align-items: center;
+		margin-inline: auto;
 	}
 	.news img {
 		width: 300px;
@@ -159,7 +163,7 @@ const posts = (await getCollection('blog')).sort(
 		margin-block: 2px 6px;
 	}
 	.date {
-		margin-block: 0 15px;
+		margin-block: 8px 15px;
 		font-size: 1.2rem;
 		color: var(--gray);
 	}
@@ -187,15 +191,15 @@ const posts = (await getCollection('blog')).sort(
 		margin-inline: auto;
 		background-color: var(--light-gray);
 		border-radius: 32px;
-		margin-bottom: calc(4vw + 2rem);
+		margin-bottom: calc(4vw + 3rem);
 		padding-block: 20px 10px;
 	}
 	.info-box p {
 		text-align: center;
 	}
 	.info-box img {
-		width: 80px;
-		margin-block: 30px;
+		width: 70px;
+		margin-block: 20px;
 	}
 	.info-box a > img {
 		width: 10px;
@@ -214,19 +218,32 @@ const posts = (await getCollection('blog')).sort(
 			padding-block: 80px 130px;
 		}
 		.news {
+			text-align: left;
 			padding-block: calc(2vh + 2rem);
 			max-width: 900px;
-			margin: 0 auto;
+			margin-inline: auto;
 		}
-		.main-info {
+		.post-info * {
+			text-align: left;
+		}
+		/* .main-info {
 			padding-block: calc(6vh + 2rem);
-		}
+		} */
 		h1 {
 			font-size: calc(2vw + 3rem);
 			text-align: left;
 		}
-		h2 {
-			font-size: 2.8rem;
+		.main-info h2 {
+			font-size: calc(0.7vw + 2rem);
+		}
+		h3 {
+		font-size: 2.4rem;
+		}
+		h4 {
+		font-size: 1.8rem;
+		}
+		h5 {
+			font-size: 1.8rem;
 		}
 		.hero .button-container {
 			text-align: left;
@@ -243,6 +260,11 @@ const posts = (await getCollection('blog')).sort(
 			display: flex;
 			gap: 20px;
 		}
+		.date {
+			margin-block: 0 15px;
+		}
+		.main-info h2 {
+		}
 	}
 
 	@media  (min-width: 900px) {
@@ -250,19 +272,15 @@ const posts = (await getCollection('blog')).sort(
 		font-size: 3.2rem;
 	}
 		.main-info {
-			max-width: 1000px;
-			margin: 0 auto;
+			max-width: 1060px;
+			margin-inline: auto;
 		}
-		.main-info h2 {
-			line-height: 42px;
-		}
-
 		.info-box {
 			padding: 60px 40px 80px;
 			margin-bottom: 80px;
 		}
 		.news {
-		margin-block: calc(2vw + 2rem)
-	}
+		margin-block: calc(2vw + 2rem) calc(2vw + 3rem);
+		}
 	}
 </style>
