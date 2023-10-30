@@ -1,9 +1,10 @@
- @import url(//fonts.googleapis.com/css2?family=Inter:wght@600&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 :root {
 	--white: #ffffff;
 	--light-gray: #D6D6D6;
 	--gray: #737373;
+	--darker-gray: #525252;
 	--dark-gray: #34302F;
 	--black: #141414;
 }
@@ -12,52 +13,53 @@ html {
 }
 body {
 	background-color: var(--white);
-	font-family: 'Inter';
+	font-family: "Inter";
 	margin: 0;
 	padding: 0;
 }
-/* main {
-	width: 900px;
-	max-width: calc(100% - 2rem);
-	margin: auto;
-	padding: 20px;
-} */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	color: var(--black);
-	line-height: 1.2;
 	text-align: center;
 	margin-block: 0.6rem 1rem;
+	font-weight: 500;
+	color: var(--black)
 }
 a {
 	text-decoration: none;
 	color: var(--gray);
-	transition-duration: 0.4s;
+	transition-duration: 0.8s;
 }
 a:hover {
 	color: #141414;
 	transition-duration: 0.2s;
 }
+.button:hover{
+	background-color: var(--darker-gray);
+	color: var(--white);
+}
 .button {
+	font-size: 1.2rem;
 	padding: 13px 24px;
 	margin-top: 10px;
 	border-radius: 6px;
-	border: 1px solid var(--dark-gray);
 	background-color: var(--dark-gray);
 	color: var(--white);
 }
 .light-button {
 	background-color: var(--white);
+	border: 1px solid var(--darker-gray);
 	color: var(--black);
 }
 p {
 	font-size: 1.6rem;
-	margin-block: 20px;
-	line-height: 1.6;
+	font-weight: 400;
+	line-height: 1.5;
+	word-spacing: 0.16em;
+	letter-spacing: 0.01em;
 	text-align: justify;
 }
 img {
@@ -66,20 +68,17 @@ img {
 	border-radius: 8px;
 }
 ul {
-	list-style: none;
+	/* list-style: none; */
 }
 hr {
 	border: none;
 	border-top: 1px solid var(--light-gray);
 }
 
-@media (max-width: 720px) {
-	body {
-		padding: 0 !important;
-	}
-	main {
-		padding: 2px;
-	}
+@media (min-width: 700px) {
+	.button {
+	font-size: 1.4rem;
+}
 }
 
 .sr-only {

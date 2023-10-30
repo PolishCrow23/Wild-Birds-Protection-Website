@@ -17,8 +17,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
-				margin: 0;
-				padding-bottom: 30px;
+				margin: 50px auto;
+				margin-block: 50px;
 			}
 			.hero-image {
 				width: 100%;
@@ -42,8 +42,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				text-align: center;
 				line-height: 1;
 			}
-			.title h1 {
+			h1 !important {
 				margin: 0 0 0.5em 0;
+				font-size: 3.6rem;
 			}
 			.date {
 				margin-bottom: 0.5em;
@@ -81,6 +82,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 			</article>
 		</main>
+		<div>
+			Last updated on <FormattedDate date={updatedDate} />
+		</div>
 		<Footer />
 	</body>
 </html>

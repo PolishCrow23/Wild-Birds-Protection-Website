@@ -5,18 +5,23 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<a href="/"><img class="logo" src="/logo.png"></a>
+		<div class="logo-div">
+			<a href="/"><img class="logo" src="/logo.png"></a>
+			<a href="/"><img class="logo-small" src="/logo-black.png"></a>
+			<a href="/"><img class="logo-text" src="/logo-text.png"></a>
+		</div>
 		<div class="internal-links">
 			<HeaderLink href="/blog">AKTUALNOŚCI</HeaderLink>
 			<HeaderLink href="/kampania">KAMPANIA</HeaderLink>
-			<!-- <HeaderLink href="/about">PARTNERZY</HeaderLink> -->
-			<HeaderLink href="/wsparcie">WSPARCIE</HeaderLink>
-			<!-- <HeaderLink href="/about">PODZIĘKOWANIA</HeaderLink> -->
+			<!-- <HeaderLink href="/wsparcie">WSPARCIE</HeaderLink> -->
 			<HeaderLink href="/kontakt">KONTAKT</HeaderLink>
 		</div>
-		<a class="button" href="#">Napisz do nas</a>
+		<div class="button-div">
+			<a class="button" href="mailto:zakazkolcow@poczta.fm">Napisz do nas</a>
+		</div>
 	</nav>
 </header>
+
 <style>
 	header {
 		padding: 0 20px;
@@ -25,18 +30,31 @@ import { SITE_TITLE } from '../consts';
 	nav {
 		height: 80px;
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
+		align-items: center;
+	}
+	.logo-div, .button-div {
+		flex-grow: 1;
+   		flex-basis: 0;
+	}
+	.logo-div{
+		display: flex;
+		align-items: center;
 	}
 	.logo {
 		width: 58px;
 		display: flex;
 	}
-	.internal-links {
-		font-size: 1.6rem;
+	.logo-small {
+		display: none;
+	}
+	.logo-text {
+		width: 136px;
+		border-radius: 0;
+		padding: 20px;
 	}
 	.internal-links {
-		display: none;
+		font-size: 1.6rem;
 	}
 	.internal-links a {
 		font-family: 'Inter';
@@ -46,10 +64,33 @@ import { SITE_TITLE } from '../consts';
 		color: #141414;
 		text-decoration: none;
 	}
-	@media  (min-width: 768px) {
-		.internal-links {
+	.internal-links {
 		display: flex;
 		gap: 40px;
+	}
+	.button-div {
+		text-align: right;
+	}
+	.button {
+		display: inline-block;
+		margin: 0;
+	}
+
+	@media  (max-width: 1000px) {
+		.logo {
+			display: none;
+		}
+		.logo-small {
+			display: flex;
+			width: 56px;
+		}
+		.logo-text {
+			display: none;
+		}
+	}
+	@media  (max-width: 800px) {
+		.internal-links {
+			display: none;
 		}
 	}
 </style>

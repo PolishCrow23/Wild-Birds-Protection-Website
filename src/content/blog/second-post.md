@@ -1,6 +1,7 @@
 ---
 title: 'Second post'
 description: 'Lorem ipsum dolor sit amet'
+author: 'Dariusz Grochal'
 pubDate: 'Jul 22 2022'
 heroImage: '/blog-placeholder-4.jpg'
 ---
