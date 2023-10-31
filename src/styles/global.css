@@ -1,4 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); */
+
+@font-face {
+	font-family: 'Inter';
+	src: url('/fonts/Inter-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('/fonts/Inter-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
 
 :root {
 	--white: #ffffff;
@@ -8,6 +31,9 @@
 	--darker-gray: #525252;
 	--dark-gray: #34302F;
 	--black: #141414;
+	--box-shadow-gray: 96, 115, 159;
+	--box-shadow: 0 2px 6px rgba(var(--box-shadow-gray), 25%), 0 8px 24px rgba(var(--box-shadow-gray), 33%),
+		0 16px 32px rgba(var(--box-shadow-gray), 33%);
 }
 html {
 	font-size: 62.5%;
@@ -17,6 +43,14 @@ body {
 	font-family: "Inter";
 	margin: 0;
 	padding: 0;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+main {
+	width: 720px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 3em 1em;
 }
 h1,
 h2,
@@ -28,6 +62,12 @@ h6 {
 	margin-block: 0.6rem 1rem;
 	font-weight: 500;
 }
+h1 {
+	font-size: 2.4rem;
+}
+h2 {
+	font-size: 2.4rem;
+}
 a {
 	text-decoration: none;
 	color: var(--gray);
@@ -36,6 +76,9 @@ a {
 a:hover {
 	color: #141414;
 	transition-duration: 0.2s;
+}
+ul a:hover img {
+	box-shadow: var(--box-shadow);
 }
 .button:hover{
 	background-color: var(--darker-gray);
@@ -58,7 +101,7 @@ p {
 	font-size: 1.6rem;
 	font-weight: 400;
 	line-height: 1.5;
-	word-spacing: 0.16em;
+	word-spacing: 0.14em;
 	letter-spacing: 0.01em;
 	text-align: justify;
 }
@@ -66,9 +109,6 @@ img {
 	max-width: 100%;
 	height: auto;
 	border-radius: 8px;
-}
-ul {
-	/* list-style: none; */
 }
 hr {
 	border: none;
@@ -79,6 +119,24 @@ hr {
 	.button {
 	font-size: 1.4rem;
 }
+}
+
+
+.highlight-list {
+	font-size: 1.6rem;
+	list-style: none;
+	padding-inline-start: 0;
+	margin-block: 2em;
+	line-height: 1.5;
+    word-spacing: 0.14em;
+    letter-spacing: 0.01em;
+    text-align: justify;
+}
+.highlight-list > li {
+	margin-block: 1em;
+	background-color: var(--light-gray);
+	border-radius: 6px;
+	padding: 1em;
 }
 
 .sr-only {

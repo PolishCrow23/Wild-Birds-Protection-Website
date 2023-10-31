@@ -6,9 +6,9 @@ interface Props {
 const { date } = Astro.props;
 ---
 
-<time datetime={date?.toISOString()}>
+<time datetime={date.toISOString()}>
 	{
-		date?.toLocaleDateString('pl-PL', {
+		date.toLocaleDateString('pl-PL', {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric',

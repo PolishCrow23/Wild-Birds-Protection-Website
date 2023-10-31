@@ -9,7 +9,7 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -29,13 +29,13 @@ const posts = (await getCollection('blog')).sort(
 		<section class="main-info">
 			<h2>Nasza misja to ochrona dzikich ptaków i zachowanie środowiska naturalnego. Dowiedz się więcej o tym problemie i dlaczego warto zastanowić się nad zakazem stosowania kolców.</h2>
 			<div class="button-container">
-				<a class="button light-button" href="/kontakt">Poznaj nasz zespół</a>
+				<a class="button light-button" href="https://zrzutka.pl/4czygm">Wesprzyj nas</a>
 			</div>
 		</section>
 		<hr/>
 
 		<section class="news">
-			<div class="news-flex">
+			<div class="news-heading-button-container">
 			<h3>Aktualności</h3>
 			<a href="/blog" class="button light-button">Zobacz wszystkie</a>
 			</div>
@@ -43,7 +43,7 @@ const posts = (await getCollection('blog')).sort(
 				{
 					posts.map((post) => (
 						<li>
-							<div class="post-container">
+							<div class="news-container">
 								<div class="post-image">
 									<a href={`/blog/${post.slug}/`}><img width={720} height={360} src={post.data.heroImage} alt="" /></a>
 								</div>
@@ -56,12 +56,12 @@ const posts = (await getCollection('blog')).sort(
 										<p class="description">{post.data.description}</p>
 									</div>
 									<div>
-										<a class="more-info" href={`/blog/${post.slug}/`}><span>Dowiedz się więcej 🠚</span></a>
+										<a class="more-info" href={`/blog/${post.slug}/`}><span>Dowiedz się więcej &#9658</span></a>
 									</div>
 								</div>
 							</div>
 						</li>
-						)).slice(4)
+						)).slice(0, 3)
 					}
 				</ul>
 			</section>
@@ -76,7 +76,7 @@ const posts = (await getCollection('blog')).sort(
 					</div>
 					<div class="flex-item">
 						<img src="/number-1.png">
-						<a href="https://zrzutka.pl/4czygm#wplacajacy"><h5>Wspieraj Naszą Kampanię 🠚</h5></a>
+						<a href="https://zrzutka.pl/4czygm#wplacajacy"><h5>Wspieraj Naszą Kampanię &#9658</h5></a>
 						<p>Wsparcie finansowe jest niezwykle ważne dla naszej działalności. Każda kwota pomaga w promowaniu świadomości.</p>
 					</div>
 					<div class="flex-item">
@@ -118,7 +118,7 @@ const posts = (await getCollection('blog')).sort(
 	h3 {
 		font-size: 2rem;
 	}
-	h4,h5 {
+	h4, h5 {
 		font-size: 1.8rem;
 	}
 	.button-container {
@@ -133,10 +133,7 @@ const posts = (await getCollection('blog')).sort(
 		text-align: center;
 		list-style: none;
 	}
-	.news img {
-		margin-inline: auto;
-	}
-	.news-flex {
+	.news-heading-button-container {
 		gap: 15px;
 		display: flex;
 		justify-content: space-between;
@@ -144,44 +141,32 @@ const posts = (await getCollection('blog')).sort(
 		flex-wrap: wrap;
 		margin-bottom: 30px;
 	}
-	.news-flex .button {
+	.news-heading-button-container > .button {
 		margin: 0;
 	}
-	.news ul {
+	.news > ul {
 		padding: 0;
 	}
 	.post-image {
 		flex-shrink: 0;
-		margin-inline: auto;
 	}
 	.news img {
 		width: 300px;
-		height: 200px;
-		flex-shrink: 0;
 	}
 	.title {
-		margin-block: 2px 6px;
+		margin-block: 0.2em 0.7em;
 	}
 	.date {
-		margin-block: 8px 15px;
+		margin-block: 15px;
 		font-size: 1.2rem;
 		color: var(--gray);
 	}
 	.description {
 		font-size: 1.6rem;
-		margin-block: 5px 15px;
-	}
-	.post-info {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
 	}
 	.more-info {
 		font-size: 1.4rem;
 		font-weight: 500;
-	}
-	.more-info img {
-		width: 10px;
 	}
 
 	/* INFO BOX */
@@ -222,6 +207,7 @@ const posts = (await getCollection('blog')).sort(
 			padding-block: calc(2vh + 2rem);
 			max-width: 900px;
 			margin-inline: auto;
+			padding-inline: 2%;
 		}
 		.post-info * {
 			text-align: left;
@@ -251,7 +237,7 @@ const posts = (await getCollection('blog')).sort(
 		.main-info .button {
 			margin-top: 20px;
 		}
-		.post-container {
+		.news-container {
 			display: flex;
 			gap: 40px;
 			margin-bottom: 20px;

@@ -6,30 +6,29 @@ import Layout from '../layouts/BlankLayout.astro';
 	title="Kampania"
 >
 <p>
-Celem kampanii jest wprowadzenie zakazu montażu kolców przeciw ptakom.
+    Celem kampanii jest wprowadzenie zakazu montażu kolców przeciw ptakom.
 </p>
 <p>
-Budynki w całej Polsce naszpikowane są kolcami stanowiącymi śmiertelne zagrożenie ptaków.
-Wbrew temu, co twierdzą producenci tego typu zabezpieczeń, kolce stanowią śmiertelną pułapkę.
-Ofiarami stają się nie tylko gołębie miejskie, przeciw którym głównie stosowane są kolce, ale także inne gatunki ptaków.
+    Budynki w całej Polsce naszpikowane są kolcami stanowiącymi śmiertelne zagrożenie ptaków.
+    Wbrew temu, co twierdzą producenci tego typu zabezpieczeń, kolce stanowią śmiertelną pułapkę.
+    Ofiarami stają się nie tylko gołębie miejskie, przeciw którym głównie stosowane są kolce, ale także inne gatunki ptaków.
 </p>
-<ul>
-<li>
-Żądamy dodania do artykułu 52, Ustawy o Ochronie Przyrody, punktu zakazującego tego typu rozwiązań w brzmieniu.
-
-„Montażu kolców lub innych elementów z ostrym zakończeniem w przestrzeni publicznej”
-</li>
-<li>
-Chcemy, aby kolce całkowicie zniknęły z przestrzeni publicznej. Zakaz ich montażu ma obejmować nie tylko budynki mieszkalne. Kolce masowo montowane są też np. na wiatach przystankowych.
-</li>
-<li>
-Chcemy również, aby zakaz objął już istniejące zabezpieczenia w postaci kolców.
-Likwidacji tego typu zabezpieczeń w ciągu 2 lat od daty wejścia przepisu w życie.
-Wprowadzenia kar za stosowanie tego typu zabezpieczeń.
-</li>
+<ul class='highlight-list'>
+    <li>
+        Żądamy dodania do artykułu 52, Ustawy o Ochronie Przyrody, punktu zakazującego tego typu rozwiązań w brzmieniu.
+        „Montażu kolców lub innych elementów z ostrym zakończeniem w przestrzeni publicznej”.
+    </li>
+    <li>
+        Chcemy, aby kolce całkowicie zniknęły z przestrzeni publicznej. Zakaz ich montażu ma obejmować nie tylko budynki mieszkalne. Kolce masowo montowane są też np. na wiatach przystankowych.
+    </li>
+    <li>
+        Chcemy również, aby zakaz objął już istniejące zabezpieczenia w postaci kolców.
+        Likwidacji tego typu zabezpieczeń w ciągu 2 lat od daty wejścia przepisu w życie.
+        Wprowadzenia kar za stosowanie tego typu zabezpieczeń.
+    </li>
 </ul>
 
-<h1>Kolce śmierci</h3>
+<h2>Kolce śmierci</h2>
 <p>
 Kolce stanowią realne zagrożenie utraty życia dla wszystkich gatunków ptaków.
 Udowadniają to liczne zdjęcia. Są metodą nie tylko śmiertelnie groźną dla zwierząt, ale również <code>mało skuteczną</code>. Gołębie miejskie potrafią zakładać gniazda bezpośrednio na kolcach, co zwykle kończy się tragicznie dla ich potomstwa.
@@ -41,32 +40,47 @@ Alternatywę dla kolców stanowią metalowe spirale. Cena oraz sposób montażu 
 <h2>Osoby zaangażowane w kampanię</h2>
 <p>Kampania społeczna Zakaz Kolców prowadzona jest przez osoby zajmujące się na co dzień ratowaniem gołębi oraz innych zwierząt.</p>
 
+
 <div class="us">
     <div class="person">
         <img class="our-photos" src="/o nas/Dariusz.jpg">
         <div>
             <h3>Dariusz Grochal</h3>
-            <p>Dziennikarz, fotograf, autor dwóch powieści. Miłośnik zwierząt. Wolne chwile spędza na działce z książką w towarzystwie swoich gołębiowych przyjaciół Siwej i Hermana.</p>
+            <p><a href="http://3d-press.pl/">Dziennikarz</a>, fotograf, autor dwóch powieści. Miłośnik zwierząt. Wolne chwile spędza na działce z książką w towarzystwie swoich gołębiowych przyjaciół Siwej i Hermana.</p>
         </div>
     </div>
+
     <div class="person">
         <img class="our-photos" src="/o nas/Iga.jpg">
         <div>
             <h3>Iga Spodzieja</h3>
-            <p>Autorka bloga <a href="https://chatkagolebia.pl">Chatka Gołębia</a>. Wieloletnia wolontariuszka ośrodka dla rehabilitacji dzikich zwierząt i fundacji <a href="https://vetika.com.pl/dzikie-zwierzeta/osrodek-rehabilitacji-dzikich-zwierzat/">Akcja dla Dzikich Zwierząt</a>. Z wykształcenia filolog rosyjski. W wolnym czasie lubi grać w gry komputerowe, robić modele 3D w Blenderze i programować strony internetowe.</p>
+            <p>Autorka bloga <a href="https://chatkagolebia.pl">Chatka Gołębia</a>. Wieloletnia wolontariuszka ośrodka dla rehabilitacji dzikich zwierząt i fundacji <a href="https://vetika.com.pl/dzikie-zwierzeta/osrodek-rehabilitacji-dzikich-zwierzat/">Akcja dla Dzikich Zwierząt</a>. Z wykształcenia filolog rosyjski. Lubi robić modele 3D w Blenderze i programować strony internetowe. W kampanii Zakaz Kolców odpowiedzialna za kod strony.</p>
+        </div>
+    </div>
+
+    <div class="person">
+        <img class="our-photos" src="/o nas/Hania.jpg">
+        <div>
+            <h3>Hania Kozik</h3>
+            <p>Przyszłoroczna maturzystka, wolontariuszka fundacji <a href="https://www.facebook.com/gruszetnik">Gruszętnik – gołębie w potrzebie</a>. W kampanii Zakaz Kolców odpowiedzialna za prowadzenie <a href="https://www.instagram.com/zakaz_kolcow/">Instagrama</a>.</p>
         </div>
     </div>
 </div>
 </Layout>
 
 <style>
+    img {
+        max-width: 250px;
+        display: block;
+        margin: 0 auto;
+    }
 
+    @media  (min-width: 700px) {
     .person {
         display: flex;
         padding: 20px 0;
         gap: 10px;
     }
-    .our-photos {
-        width: 250px;
-    }
+}
+
 </style>
