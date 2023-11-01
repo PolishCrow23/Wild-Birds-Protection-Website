@@ -1,0 +1,8 @@
+ul {
+    list-style: square;
+    margin-block: 2em;
+}
+
+li {
+    font-size: 1.6rem;
+}
