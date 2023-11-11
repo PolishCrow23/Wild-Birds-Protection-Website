@@ -43,7 +43,7 @@ import { SITE_TITLE } from '../consts';
 	}
 	.logo-div, .button-div {
 		flex-grow: 1;
-   		flex-basis: 0;
+		flex-basis: 0;
 	}
 	.logo-div{
 		display: flex;
@@ -75,6 +75,7 @@ import { SITE_TITLE } from '../consts';
 	.internal-links {
 		display: flex;
 		gap: 40px;
+		padding: 0;
 	}
 	.button-div {
 		text-align: right;
@@ -95,12 +96,25 @@ import { SITE_TITLE } from '../consts';
 		.logo-text {
 			display: none;
 		}
+		.logo-div, .button-div {
+		flex-grow: 0;
+		flex-basis: auto;
 	}
+	}
+
 	@media  (max-width: 800px) {
-		.internal-links {
-			display: none;
+		/* .primary-navigation {
+			position: fixed;
+			inset: 0 0 0 30%;
+			background-color: var(--darker-gray);
+			flex-direction: column;
+			margin-top: 0;
+			padding: 10rem 2em;
+		} */
+		a {
+			color: var(--light-gray);
 		}
-		.mail {
+		.internal-links {
 			display: none;
 		}
 	}
