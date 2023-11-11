@@ -10,18 +10,27 @@ import { SITE_TITLE } from '../consts';
 			<a href="/"><img class="logo-small" src="/logo-black.png"></a>
 			<a href="/"><img class="logo-text" src="/logo-text.png"></a>
 		</div>
-		<div class="internal-links">
-			<HeaderLink href="/blog">AKTUALNOŚCI</HeaderLink>
-			<HeaderLink href="/kampania">KAMPANIA</HeaderLink>
-			<HeaderLink href="/kontakt">KONTAKT</HeaderLink>
-		</div>
-		<div class="button-div">
+		<ul id="primary-navigation" class="primary-navigation internal-links">
+			<li>
+				<a href="/blog">AKTUALNOŚCI</a>
+			</li>
+			<li> 
+				<a href="/kampania">KAMPANIA</a>
+			</li>
+			<li> 
+				<a href="/kontakt">KONTAKT</a>
+			</li>
+		</ul>
+		<div class="button-div mail">
 			<a class="button" href="mailto:zakazkolcow@poczta.fm">Napisz do nas</a>
 		</div>
 	</nav>
 </header>
 
 <style>
+	ul {
+		list-style: none;
+	}
 	header {
 		padding: 0 20px;
 		background-color: white;
@@ -89,6 +98,9 @@ import { SITE_TITLE } from '../consts';
 	}
 	@media  (max-width: 800px) {
 		.internal-links {
+			display: none;
+		}
+		.mail {
 			display: none;
 		}
 	}

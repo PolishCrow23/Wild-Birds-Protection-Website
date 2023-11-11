@@ -2,7 +2,7 @@
 title: 'Panel dyskusyjny w Krzysztoforach'
 description: 'Pierwszy panel dyskusyjny na temat gołębi miejskich za nami. Gorące podziękowania dla: Bożeny Knecht, która była pomysłodawczynią panelu, Muzeum Krzysztofory Kraków za organizację, Kamila Stasiaka za bardzo dobre prowadzenie dyskusji i Michała Czuby z fundacji Peruna za udział i ciekawy głos w debacie. '
 author: 'Dariusz Grochal'
-pubDate: 'December 22 2023'
+pubDate: 'November 9 2023'
 heroImage: '/panel w krzysztoforach.jpg'
 ---
 
