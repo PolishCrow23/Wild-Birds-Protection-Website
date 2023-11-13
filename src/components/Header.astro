@@ -18,10 +18,10 @@
 				<a href="/kampania">KAMPANIA</a>
 			</li>
 			<li> 
-				<a href="/kontakt">KONTAKT</a>
+				<a href="/popierają-nas">POPIERAJĄ NAS</a>
 			</li>
 			<li> 
-				<a href="/popierają-nas">POPIERAJĄ NAS</a>
+				<a href="/kontakt">KONTAKT</a>
 			</li>
 		</ul>
 
@@ -96,6 +96,10 @@
 	.mobile-nav-toggle {
 		display: none;
 	}
+
+	.primary-navigation.prevent-transition{
+  	transition: none;
+}
 
 	@media  (max-width: 1100px) {
 		.logo-div, .button-div {
@@ -178,4 +182,11 @@
 			navToggle.setAttribute('aria-expanded', false)
 		}
 	})
+
+	window.addEventListener("resize", ()=> {
+  primaryNav.classList.add("prevent-transition");
+  setTimeout(()=>{
+    primaryNav.classList.remove("prevent-transition");
+  },500)
+})
 </script>
