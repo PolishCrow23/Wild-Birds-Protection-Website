@@ -1,8 +1,5 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 ---
-
 <header>
 	<nav>
 		<div class="logo-div">
@@ -10,7 +7,10 @@ import { SITE_TITLE } from '../consts';
 			<a href="/"><img class="logo-small" src="/logo-black.png"></a>
 			<a href="/"><img class="logo-text" src="/logo-text.png"></a>
 		</div>
-		<ul id="primary-navigation" class="primary-navigation internal-links">
+
+		<button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
+
+		<ul id="primary-navigation" data-visible="false" class="primary-navigation">
 			<li>
 				<a href="/blog">AKTUALNOŚCI</a>
 			</li>
@@ -21,6 +21,7 @@ import { SITE_TITLE } from '../consts';
 				<a href="/kontakt">KONTAKT</a>
 			</li>
 		</ul>
+
 		<div class="button-div mail">
 			<a class="button" href="mailto:zakazkolcow@poczta.fm">Napisz do nas</a>
 		</div>
@@ -28,12 +29,12 @@ import { SITE_TITLE } from '../consts';
 </header>
 
 <style>
-	ul {
-		list-style: none;
+	body {
+		overflow-x: hidden;
 	}
 	header {
 		padding: 0 20px;
-		background-color: white;
+		background-color: var(--white);
 	}
 	nav {
 		height: 80px;
@@ -41,11 +42,30 @@ import { SITE_TITLE } from '../consts';
 		justify-content: space-between;
 		align-items: center;
 	}
+	ul {
+		list-style: none;
+	}
+
+	.primary-navigation {
+		display: flex;
+		gap: 40px;
+		padding: 0;
+		font-size: 1.6rem;
+	}
+	.primary-navigation a {
+		font-family: 'Inter';
+		font-size: 1.6rem;
+	}
+	.primary-navigation a.active {
+		color: #141414;
+		text-decoration: none;
+	}
+
 	.logo-div, .button-div {
 		flex-grow: 1;
 		flex-basis: 0;
 	}
-	.logo-div{
+	.logo-div {
 		display: flex;
 		align-items: center;
 	}
@@ -53,30 +73,15 @@ import { SITE_TITLE } from '../consts';
 		width: 58px;
 		display: flex;
 	}
-	.logo-small {
-		display: none;
-	}
 	.logo-text {
 		width: 136px;
 		border-radius: 0;
 		padding: 20px;
 	}
-	.internal-links {
-		font-size: 1.6rem;
+	.logo-small {
+		display: none;
 	}
-	.internal-links a {
-		font-family: 'Inter';
-		font-size: 1.6rem;
-	}
-	.internal-links a.active {
-		color: #141414;
-		text-decoration: none;
-	}
-	.internal-links {
-		display: flex;
-		gap: 40px;
-		padding: 0;
-	}
+
 	.button-div {
 		text-align: right;
 	}
@@ -85,37 +90,89 @@ import { SITE_TITLE } from '../consts';
 		margin: 0;
 	}
 
+	.mobile-nav-toggle {
+		display: none;
+	}
+
 	@media  (max-width: 1000px) {
+		.logo-div, .button-div {
+			flex-grow: 0;
+			flex-basis: auto;
+	}
 		.logo {
+			display: none;
+		}
+		.logo-text {
 			display: none;
 		}
 		.logo-small {
 			display: flex;
 			width: 56px;
 		}
-		.logo-text {
-			display: none;
-		}
-		.logo-div, .button-div {
-		flex-grow: 0;
-		flex-basis: auto;
-	}
 	}
 
-	@media  (max-width: 800px) {
-		/* .primary-navigation {
+	@media  (max-width: 700px) {
+		.primary-navigation {
 			position: fixed;
+			z-index: 1000;
 			inset: 0 0 0 30%;
-			background-color: var(--darker-gray);
+
 			flex-direction: column;
 			margin-top: 0;
-			padding: 10rem 2em;
-		} */
-		a {
-			color: var(--light-gray);
+			margin-bottom: 0;
+			padding: min(15vh, 20rem) 2em;
+
+			transform: translateX(100%);
+			transition: transform 350ms ease-in;
+
+			background-color: var(--darker-gray);
 		}
-		.internal-links {
+		.primary-navigation[data-visible="true"] {
+			transform: translateX(0%);
+		}
+		.mobile-nav-toggle {
+			display: block;
+			position: absolute;
+			z-index: 9999;
+
+			width: 32px;
+			aspect-ratio: 1; /*width and height are the same*/
+			top: 2rem;
+			right: 2rem;
+			border: none;
+			background: url(/public/hamburger.svg);
+		}
+		.primary-navigation a {
+			color: var(--white);
+		}
+		.mail {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+	}
+	@media  (max-width: 400px) {
+		.mail {
 			display: none;
-		}
+		} 
 	}
 </style>
+
+<script>
+	const primaryNav = document.querySelector('.primary-navigation')
+	const navToggle = document.querySelector('.mobile-nav-toggle')
+
+	navToggle.addEventListener('click', () => {
+		const visibility = primaryNav.getAttribute('data-visible')
+		
+		if (visibility === "false") {
+			primaryNav.setAttribute('data-visible', true)
+			navToggle.setAttribute('aria-expanded', true)
+		}
+		else if (visibility === "true") {
+			primaryNav.setAttribute('data-visible', false)
+			navToggle.setAttribute('aria-expanded', false)
+		}
+	})
+</script>
