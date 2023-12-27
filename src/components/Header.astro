@@ -1,4 +1,5 @@
 ---
+import ThemeIcon from './ThemeIcon.astro';
 ---
 <header>
 	<nav>
@@ -26,8 +27,10 @@
 		</ul>
 
 		<div class="button-div mail">
+			<!-- <ThemeIcon /> -->
 			<a class="button" href="mailto:zakazkolcow@poczta.fm">Napisz do nas</a>
 		</div>
+	
 	</nav>
 </header>
 
@@ -85,6 +88,9 @@
 		display: none;
 	}
 
+	#themeToggle {
+	}
+
 	.button-div {
 		text-align: right;
 	}
@@ -97,7 +103,7 @@
 		display: none;
 	}
 
-	.primary-navigation.prevent-transition{
+	.primary-navigation.prevent-transition {
   	transition: none;
 }
 
@@ -184,9 +190,9 @@
 	})
 
 	window.addEventListener("resize", ()=> {
-  primaryNav.classList.add("prevent-transition");
-  setTimeout(()=>{
+  	primaryNav.classList.add("prevent-transition");
+  	setTimeout(()=>{
     primaryNav.classList.remove("prevent-transition");
-  },500)
+	},500)
 })
 </script>

@@ -3,20 +3,43 @@ import Layout from '../layouts/BlankLayout.astro';
 ---
 
 <Layout
-	title="Patroni medialni"
+	title="Popierają nas"
 >
 
-<div class="flex-container">
-    <a href="https://chatkagolebia.pl/"><img src="/primary-navigation/popierają-nas/chatka-golebia.png" alt="logo Chatki Gołębia"></a>
+<h2>Patroni medialni</h2>
+<div class="patrons">
+    <a href="https://chatkagolebia.pl/"><img src="/pages/popierają-nas/chatka-golebia.png" alt="logo Chatki Gołębia"></a>
+    <a href="http://3d-press.pl/"><img src="/pages/popierają-nas/3D-press.png" alt="logo 3D Press"></a>
 </div>
 
+<h2>Popierają nas</h2>
+<ol>
+<li><a href="https://www.mlodalewica.pl/""><h3>Młoda Lewica</h3></a></li>
+<img src="/pages/popierają-nas/poparcie_młoda_lewica.jpg" alt="list Młoda Lewica">
 </Layout>
+</ol>
+
 
 <style>
-.flex-container {
-
+div {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    flex-wrap: wrap;
 }
-img {
+.patrons img {
     width: 185px;
+}
+
+h2 {
+    text-align: left;
+}
+
+h3 {
+    text-align: left;
+}
+
+li {
+    font-size: 1.4rem;
 }
 </style>

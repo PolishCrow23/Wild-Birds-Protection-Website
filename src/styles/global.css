@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); */
-
 @font-face {
 	font-family: 'Inter';
 	src: url('/fonts/Inter-Regular.ttf') format('truetype');
@@ -161,3 +159,12 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+/* html.dark {
+	background-color: #0b00e5;
+	color: #fff;
+  }
+
+  .dark .nav-links a {
+	color: #fff;
+  } */
