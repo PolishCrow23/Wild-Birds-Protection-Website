@@ -91,9 +91,10 @@ const posts = (await getCollection('blog')).sort(
 </html>
 <style>
 	.hero {
-		background-image: url("/hero-img.jpg");
+		background-image: url("/hero-small (Custom).jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
+		background-position: 50%;
 		padding-inline: 1em;
 		padding-block: calc(3vw + 2rem);
 	}
@@ -201,7 +202,8 @@ const posts = (await getCollection('blog')).sort(
 		.hero {
 			padding-inline: 10% 0;
 			padding-block: 80px 130px;
-		}
+			background-image: url("/heroimgbw (Custom).jpg");
+	}
 		.news {
 			text-align: left;
 			padding-block: calc(2vh + 2rem);
@@ -257,6 +259,7 @@ const posts = (await getCollection('blog')).sort(
 		h3 {
 		font-size: 3.2rem;
 	}
+
 		.main-info {
 			max-width: 1060px;
 			margin-inline: auto;
