@@ -22,7 +22,7 @@ Poruszyliśmy bardzo wiele wątków, bo problemy z gołębiami miejskimi są bar
 - brak miejsc w ośrodkach (a w zasadzie to brak ośrodka dla dzikich zwierząt),
 - problemy z dokarmianiem (brak wyznaczonych miejsc do karmienia),
 - kolce (cały Kraków jest pokryty gęstą siecią kolców),
-- panel był nagrywany, niedługo będziecie mogli odsłuchać go w całości.
+- panel był nagrywany, [możecie odsłuchać go w całości](https://www.youtube.com/watch?v=rdW0VIj_ZyA&list=PL_R1zXUvdteamDNZbggvMki4lbeEZr-ar&fbclid=IwAR1qMwGOFJshVtuFctai4oDEVaR6fqz7222cPyrWOcd5-RKuL2zVuSwaVg8&ab_channel=3D-Press).
 
 ---------------------------------
 
